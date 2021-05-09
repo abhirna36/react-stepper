@@ -5,12 +5,12 @@ function Example() {
   return (
     <div style={{display: 'flex', margin: 12,}}>
       <Stepper
-        numberOfSteps={4}
-        completedStepColor={"#007bff"}
+        numberOfSteps={3}
+        completedStepColor={"#007bff80"}
         inactiveStepColor={"#cccccc"}
-        completedProgressColor={"#007bff"}
+        completedProgressColor={"#007bff80"}
         remainingProgressColor={"#cccccc"}
-        activeStep={2}
+        activeStep={1}
         labelText={'Step'}
       />
     </div>
