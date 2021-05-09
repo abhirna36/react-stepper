@@ -9,6 +9,7 @@ function Stepper(props) {
     remainingProgressColor,
     activeStep,
     labelText,
+    totalStepperWidth
   } = props;
 
   const [progressSteps, setProgressSteps] = useState([]);
@@ -27,10 +28,8 @@ function Stepper(props) {
     setLabelArray(arr);
   }, [numberOfSteps]);
 
-  console.log("progress step length", progressSteps);
-
   return (
-    <div style={{ flex: 1 }}>
+    <div style={{width: totalStepperWidth ? totalStepperWidth: '100%'}}>
       <div
         style={{
           display: "flex",
@@ -48,13 +47,11 @@ function Stepper(props) {
                 flex: 1,
                 flexDirection: "row",
                 backgroundColor:
-                  activeStep > 1
+                  activeStep * 2 > index
                     ? completedProgressColor
                     : remainingProgressColor,
               }}
-            >
-              {/* <div style={{height:2, width: 10, backgroundColor: completedProgressColor}}/> */}
-            </div>
+            />
           ) : (
             <div
               style={{
@@ -62,7 +59,8 @@ function Stepper(props) {
                 width: 30,
                 borderRadius: 15,
                 backgroundColor:
-                  (activeStep*2) > index
+                  (activeStep === 0 && activeStep === index) ||
+                  activeStep * 2 >= index
                     ? completedStepColor
                     : inactiveStepColor,
                 alignSelf: "center",
