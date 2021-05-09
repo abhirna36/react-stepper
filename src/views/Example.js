@@ -10,7 +10,7 @@ function Example() {
         inactiveStepColor={"#cccccc"}
         completedProgressColor={"#007bff80"}
         remainingProgressColor={"#cccccc"}
-        activeStep={1}
+        activeStep={0}
         labelText={'Step'}
         totalStepperWidth={'75%'}
       />
